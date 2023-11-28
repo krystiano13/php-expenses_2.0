@@ -5,6 +5,7 @@
     background-color: var(--primary);
     border-radius: 1rem;
     margin-top : 2rem;
+    animation: appear2 500ms;
     
     @media screen and (orientation: portrait) and (max-width: 600px) {
       width : 90vw;
@@ -63,5 +64,22 @@
     &__button:hover {
       @include btnHover();
     }
+  }
+}
+
+@keyframes appear2 {
+  0% {
+    transform: translateX(-150px);
+    opacity : 0;
+  }
+
+  50% {
+    transform: translateX(-150px);
+    opacity : 0;
+  }
+
+  100% {
+    transform: translateX(0px);
+    opacity : 1;
   }
 }

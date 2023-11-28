@@ -4,5 +4,18 @@
     font-size : 3rem;
     margin : 0;
     font-family: 'DM Sans', sans-serif;
+    animation: appear1 250ms;
+  }
+}
+
+@keyframes appear1 {
+  0% {
+    transform: translateX(-150px);
+    opacity : 0;
+  }
+
+  100% {
+    transform: translateX(0px);
+    opacity : 1;
   }
 }
