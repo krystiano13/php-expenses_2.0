@@ -6,8 +6,9 @@ const Home = () => {
         <section className="HomeWrapper">
             <h1 className="HomeWrapper__title">Expense CSV Reader</h1>
             <form className="HomeWrapper__form">
+                <label className="HomeWrapper__form__label">Your CSV file:</label>
                 <input className="HomeWrapper__form__input" type="file" accept=".csv" placeholder="Upload CSV file"/>
-                <button className="HomeWrapper__button" type="submit">Submit</button>
+                <button className="HomeWrapper__form__button" type="submit">Submit</button>
             </form>
         </section>
     )
