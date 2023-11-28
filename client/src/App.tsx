@@ -1,10 +1,16 @@
 import React from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { Home } from "./views/Home";
 
 const App = () => {
     return (
-        <div>
-            <h1>PHP expenses 2.0</h1>
-        </div>
+        <main>
+            <BrowserRouter>
+                <Routes>
+                    <Route path='/' element={<Home />} />
+                </Routes>
+            </BrowserRouter>
+        </main>
     )
 }
 
