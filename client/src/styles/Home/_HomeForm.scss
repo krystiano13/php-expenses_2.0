@@ -20,6 +20,23 @@
       margin-bottom: 1rem;
     }
 
+    @mixin btn($padding,$font) {
+      cursor: pointer;
+      color: var(--text);
+      background-color: var(--secondary);
+      border: none;
+      padding : $padding;
+      font-size : $font;
+      border-radius: .5rem;
+      margin-right : 1rem;
+      transition: background-color 250ms;
+      will-change: background-color;
+    }
+
+    @mixin btnHover() {
+      background-color: #059a4e;
+    }
+
     &__label {
       font-size : 1.8rem;
       @include separate();
@@ -31,18 +48,20 @@
     }
 
     &__input::file-selector-button {
-      cursor: pointer;
-      color: var(--text);
-      background-color: var(--secondary);
-      border: none;
-      padding : 1rem;
-      font-size : 1.3rem;
-      border-radius: .5rem;
-      margin-right : 1rem;
+      @include btn(1rem,1.3rem);
+    }
+
+    &__input::file-selector-button:hover {
+      @include btnHover();
     }
 
     &__button {
       @include separate();
+      @include btn(0.75rem, 1.25rem);
+    }
+
+    &__button:hover {
+      @include btnHover();
     }
   }
 }
