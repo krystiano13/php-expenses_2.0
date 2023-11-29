@@ -7,12 +7,15 @@ header("Content-Type: application/json");
 require_once './vendor/autoload.php';
 
 use App\File;
+use App\Converter;
 
 if(isset($_FILES['file'])) {
     $file = new File('file');
 
     if($file -> validate()) {
-        echo json_encode(['msg' => 'succsess']);
+        $converter = new Converter($file -> getFile());
+        $converter -> convert();
+        echo json_encode(['result' => $converter -> getExpensesArray()]);
     }
 
     else {

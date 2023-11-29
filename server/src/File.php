@@ -11,7 +11,7 @@ class File
         $this -> fileName = $fileName;
     }
 
-    public function validate() {
+    public function validate(): bool {
         $file = $_FILES[$this -> fileName];
 
         if($file['type'] === "text/csv") {
@@ -23,7 +23,7 @@ class File
         }
     }
 
-    public function getFile() {
-        return $_FILES[$this -> fileName];
+    public function getFile(): string {
+        return $this -> fileName;
     }
 }
