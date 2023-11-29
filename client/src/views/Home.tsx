@@ -1,4 +1,5 @@
 import React from 'react';
+import { NavLink } from "react-router-dom";
 import '../styles/Home/Home.min.css';
 
 const Home = () => {
@@ -10,6 +11,7 @@ const Home = () => {
                 <input className="HomeWrapper__form__input" type="file" accept=".csv" placeholder="Upload CSV file"/>
                 <button className="HomeWrapper__form__button" type="submit">Submit</button>
             </form>
+            <NavLink to="/instruction">Instructions</NavLink>
         </section>
     )
 }
