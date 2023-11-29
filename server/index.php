@@ -8,7 +8,15 @@ require_once './vendor/autoload.php';
 
 use App\File;
 
-if(isset($_POST['test'])) {
-    $file = new File($_FILES['file']);
-    echo json_encode(['msg' => $file -> getFile()]);
+if(isset($_FILES['file'])) {
+    $file = new File('file');
+
+    if($file -> validate()) {
+        echo json_encode(['msg' => 'succsess']);
+    }
+
+    else {
+        echo json_encode(['msg' => 'failure']);
+        return;
+    }
 }

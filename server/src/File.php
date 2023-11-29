@@ -4,14 +4,26 @@ namespace App;
 
 class File
 {
-    private $file;
+    private string $fileName;
 
-    public function __construct($file)
+    public function __construct(string $fileName)
     {
-        $this -> file = $file;
+        $this -> fileName = $fileName;
+    }
+
+    public function validate() {
+        $file = $_FILES[$this -> fileName];
+
+        if($file['type'] === "text/csv") {
+            return true;
+        }
+
+        else {
+            return false;
+        }
     }
 
     public function getFile() {
-        return $this -> file;
+        return $_FILES[$this -> fileName];
     }
 }
