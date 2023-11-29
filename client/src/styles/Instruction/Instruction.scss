@@ -16,6 +16,7 @@
     margin-top: .75rem;
     margin-bottom: .75rem;
     font-size: $fontSize;
+    animation: appearI 250ms;
 
     @media screen and (orientation: portrait) and (max-width: 600px) {
       width : 90vw;
@@ -44,5 +45,17 @@
 
   &__button:hover {
     background-color: var(--accent);
+  }
+}
+
+@keyframes appearI {
+  from {
+    transform: translateX(-200px);
+    opacity : 0;
+  }
+
+  to {
+    transform: translateX(0px);
+    opacity : 1;
   }
 }

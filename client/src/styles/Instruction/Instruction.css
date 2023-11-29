@@ -15,6 +15,7 @@
   margin-top: 0.75rem;
   margin-bottom: 0.75rem;
   font-size: 3rem;
+  animation: appearI 250ms;
 }
 @media screen and (orientation: portrait) and (max-width: 600px) {
   .Instruction__title {
@@ -30,6 +31,7 @@
   margin-top: 0.75rem;
   margin-bottom: 0.75rem;
   font-size: 1.25rem;
+  animation: appearI 250ms;
 }
 @media screen and (orientation: portrait) and (max-width: 600px) {
   .Instruction__content {
@@ -45,6 +47,7 @@
   margin-top: 0.75rem;
   margin-bottom: 0.75rem;
   font-size: 1.35rem;
+  animation: appearI 250ms;
   border-radius: 1rem;
   border: none;
   padding: 0.25rem;
@@ -61,6 +64,17 @@
 }
 .Instruction__button:hover {
   background-color: var(--accent);
+}
+
+@keyframes appearI {
+  from {
+    transform: translateX(-200px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0px);
+    opacity: 1;
+  }
 }
 
 /*# sourceMappingURL=Instruction.css.map */
