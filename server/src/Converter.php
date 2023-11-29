@@ -12,7 +12,7 @@ class Converter
         $this -> expensesArray = array();
     }
 
-    public function convert(): void {
+    public function convert(): self {
         $file = fopen($_FILES[$this -> fileName]['tmp_name'], 'r');;
 
         while($row = fgetcsv($file,null,',')) {
@@ -20,6 +20,14 @@ class Converter
         }
 
         fclose($file);
+        return $this;
+    }
+
+    public function verifyFormat():bool {
+        if($this -> expensesArray[0] === ['Date', 'Check #', 'Description', 'Amount']) {
+            return true;
+        }
+        return false;
     }
 
     public function getExpensesArray(): array {

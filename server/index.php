@@ -14,12 +14,16 @@ if(isset($_FILES['file'])) {
 
     if($file -> validate()) {
         $converter = new Converter($file -> getFile());
-        $converter -> convert();
-        echo json_encode(['result' => $converter -> getExpensesArray()]);
+        if($converter -> convert() -> verifyFormat()) {
+            echo json_encode(['result' => $converter -> getExpensesArray()]);
+        }
+        else {
+            echo json_encode(['err' => 'Wrong table format']);
+        }
     }
 
     else {
-        echo json_encode(['msg' => 'failure']);
+        echo json_encode(['err' => 'Wrong file format']);
         return;
     }
 }
