@@ -1,4 +1,5 @@
 import React from 'react';
+import '../styles/Instruction/Instruction.min.css';
 
 const Instruction = () => {
     return (

@@ -1,0 +1,48 @@
+.Instruction {
+  width : 100%;
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  @mixin text($textAlign,$fontSize) {
+    text-align: $textAlign;
+    width : 30rem;
+    margin : 0;
+    padding: 0;
+    font-family: 'DM Sans', sans-serif;
+    margin-top: .75rem;
+    margin-bottom: .75rem;
+    font-size: $fontSize;
+
+    @media screen and (orientation: portrait) and (max-width: 600px) {
+      width : 90vw;
+    }
+  }
+
+  &__title {
+    @include text(left,3rem);
+  }
+
+  &__content {
+    @include text(left,1.25rem);
+  }
+
+  &__button {
+    @include text(center,1.35rem);
+    border-radius: 1rem;
+    border: none;
+    padding: .25rem;
+    cursor: pointer;
+    color: var(--text);
+    background-color: var(--primary);
+    transition: background-color 250ms;
+    will-change: background-color;
+  }
+
+  &__button:hover {
+    background-color: var(--accent);
+  }
+}
