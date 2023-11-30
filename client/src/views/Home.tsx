@@ -2,7 +2,11 @@ import React, { useRef } from 'react';
 import { NavLink } from "react-router-dom";
 import '../styles/Home/Home.min.css';
 
-const Home = () => {
+interface Props {
+    setData: (arr:string[]) => void
+}
+
+const Home: React.FC<Props> = ({ setData }) => {
 
     const form = useRef<HTMLFormElement>(null);
 
@@ -18,7 +22,12 @@ const Home = () => {
             })
             .then(res => res.json())
             .then(data => {
-                console.log(data);
+                if(data.result) {
+                    setData(data);
+                }
+                else {
+                    alert('Uploading failed');
+                }
             })
     }
 
