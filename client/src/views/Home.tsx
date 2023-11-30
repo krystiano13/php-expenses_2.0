@@ -25,6 +25,8 @@ const Home: React.FC<Props> = ({ setData }) => {
             .then(res => res.json())
             .then(data => {
                 if(data.result) {
+                    const result:string[][] = data.result;
+                    result.shift();
                     setData(data.result);
                     navigate('/table');
                 }
