@@ -1,0 +1,28 @@
+.Table {
+  width : 100vw;
+  height: auto;
+  background-color: var(--bg);
+
+  table {
+    width : 100%;
+    height : 100%;
+
+    tr {
+      width : 100%;
+
+      th {
+        background-color: var(--primary);
+        color: var(--bg);
+        padding: 1rem;
+      }
+
+      td {
+        width : 25%;
+        text-align: center;
+        box-sizing: border-box;
+        padding-top : .5rem;
+        padding-bottom: .5rem;
+      }
+    }
+  }
+}
