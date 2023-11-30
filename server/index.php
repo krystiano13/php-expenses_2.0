@@ -9,13 +9,13 @@ require_once './vendor/autoload.php';
 use App\File;
 use App\Converter;
 
-if(isset($_FILES['file'])) {
+if(isset($_FILES['file']) && !isset($_POST['array'])) {
     $file = new File('file');
 
     if($file -> validate()) {
         $converter = new Converter($file -> getFile());
         if($converter -> convert() -> verifyFormat()) {
-            echo json_encode(['result' => $converter -> getExpensesArray()]);
+            echo json_encode(['result' => $converter -> getExpensesArray(), 'income' => $converter -> getIncome()]);
         }
         else {
             echo json_encode(['err' => 'Wrong table format']);
@@ -27,3 +27,5 @@ if(isset($_FILES['file'])) {
         return;
     }
 }
+
+
