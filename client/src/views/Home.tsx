@@ -3,11 +3,14 @@ import { NavLink } from "react-router-dom";
 import {useNavigate} from "react-router";
 import '../styles/Home/Home.min.css';
 
+import type { income } from "../App";
+
 interface Props {
-    setData: (arr:string[][]) => void
+    setData: (arr:string[][]) => void,
+    setIncome: (el:income) => void
 }
 
-const Home: React.FC<Props> = ({ setData }) => {
+const Home: React.FC<Props> = ({ setData, setIncome }) => {
 
     const navigate = useNavigate();
     const form = useRef<HTMLFormElement>(null);
@@ -28,6 +31,7 @@ const Home: React.FC<Props> = ({ setData }) => {
                     const result:string[][] = data.result;
                     result.shift();
                     setData(data.result);
+                    setIncome(data.income);
                     navigate('/table');
                 }
                 else {

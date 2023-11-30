@@ -1,11 +1,14 @@
 import React, { useEffect } from 'react';
 import '../styles/Table/Table.min.css';
 
+import type { income } from "../App";
+
 interface Props {
-    data: string[][]
+    data: string[][],
+    income: income
 }
 
-const Table:React.FC<Props> = ({ data }) => {
+const Table:React.FC<Props> = ({ data, income }) => {
     return (
         <section className="Table">
             <table>
@@ -27,6 +30,9 @@ const Table:React.FC<Props> = ({ data }) => {
                     ))
                 }
             </table>
+            <h2>Total Income: {income?.income.toFixed(2)}</h2>
+            <h2>Total Expenses: {income?.expenses.toFixed(2)}</h2>
+            <h2>NET: {income?.net.toFixed(2)}</h2>
         </section>
     )
 }
