@@ -1,13 +1,15 @@
 import React, { useRef } from 'react';
 import { NavLink } from "react-router-dom";
+import {useNavigate} from "react-router";
 import '../styles/Home/Home.min.css';
 
 interface Props {
-    setData: (arr:string[]) => void
+    setData: (arr:string[][]) => void
 }
 
 const Home: React.FC<Props> = ({ setData }) => {
 
+    const navigate = useNavigate();
     const form = useRef<HTMLFormElement>(null);
 
     const handleSubmit = async (e:React.FormEvent<HTMLFormElement>) => {
@@ -23,7 +25,8 @@ const Home: React.FC<Props> = ({ setData }) => {
             .then(res => res.json())
             .then(data => {
                 if(data.result) {
-                    setData(data);
+                    setData(data.result);
+                    navigate('/table');
                 }
                 else {
                     alert('Uploading failed');
