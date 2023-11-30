@@ -7,6 +7,11 @@
   width: 100%;
   height: 100%;
 }
+@media screen and (max-width: 500px) {
+  .Table table {
+    font-size: 0.8rem;
+  }
+}
 .Table table tr {
   width: 100%;
 }
