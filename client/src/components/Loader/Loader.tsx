@@ -3,7 +3,14 @@ import './Loader.min.css';
 
 const Loader = () => {
     return (
-        <div className="lds-ring"><div></div><div></div><div></div><div></div></div>
+        <section className="Loader">
+            <div className="lds-ring">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </section>
     )
 }
 

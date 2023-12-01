@@ -3,6 +3,7 @@
     position: relative;
     width: 80px;
     height: 80px;
+    overflow: hidden;
 }
 .lds-ring div {
     box-sizing: border-box;
@@ -32,4 +33,13 @@
     100% {
         transform: rotate(360deg);
     }
+}
+
+.Loader {
+    width : 100vw;
+    height : 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

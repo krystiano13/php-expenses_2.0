@@ -41,4 +41,4 @@ const Table: React.FC<Props> = ({data, income}) => {
     )
 }
 
-export {Table};
+export default Table
