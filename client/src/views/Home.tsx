@@ -35,7 +35,7 @@ const Home: React.FC<Props> = ({ setData, setIncome }) => {
                     navigate('/table');
                 }
                 else {
-                    alert('Uploading failed');
+                    alert(data.err);
                 }
             })
     }
